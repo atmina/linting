@@ -1,12 +1,20 @@
-const { FlatCompat } = require('@eslint/eslintrc');
+const tailwindPlugin = require('eslint-plugin-tailwindcss');
 const ignores = require('./common/ignores');
 
-const compat = new FlatCompat({ baseDirectory: __dirname });
+const { recommended } = tailwindPlugin.configs;
 
 /**
  * @type {import('eslint').Linter.FlatConfig}
  */
 module.exports = {
+  files: ['**/*.tsx', '**/*.jsx'],
   ignores,
-  ...compat.extends('plugin:tailwindcss/recommended'),
+  plugins: {'tailwindcss': tailwindPlugin},
+  rules: {
+    ...recommended.rules,
+    'tailwindcs/no-custom-classname': 'off',
+  },
+  languageOptions: {
+    parserOptions: recommended.parserOptions,
+  },
 };
