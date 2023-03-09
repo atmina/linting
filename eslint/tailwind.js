@@ -12,7 +12,7 @@ module.exports = {
   plugins: {'tailwindcss': tailwindPlugin},
   rules: {
     ...recommended.rules,
-    'tailwindcs/no-custom-classname': 'off',
+    'tailwindcss/no-custom-classname': 'off',
   },
   languageOptions: {
     parserOptions: recommended.parserOptions,
