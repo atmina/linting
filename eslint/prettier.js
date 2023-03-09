@@ -4,16 +4,8 @@ const prettierPlugin = require('eslint-plugin-prettier');
 // Turns off all rules that are unnecessary or might conflict with Prettier.
 const prettierOverrides = require('eslint-config-prettier');
 
+const ignores = require('./common/ignores');
 const prettierOptions = require('../prettier');
-
-const ignores = [
-  '**/node_modules',
-  '**/build',
-  '**/dist',
-  '**/.cache',
-  '**/.storybook',
-  '**/.next',
-];
 
 /**
  * @type {import('eslint').Linter.FlatConfig}

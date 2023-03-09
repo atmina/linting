@@ -1,15 +1,7 @@
 const importPlugin = require('eslint-plugin-import');
 const typescriptEslintPlugin = require('@typescript-eslint/eslint-plugin');
 const typescriptEslintParser = require('@typescript-eslint/parser');
-
-const ignores = [
-  '**/node_modules',
-  '**/build',
-  '**/dist',
-  '**/.cache',
-  '**/.storybook',
-  '**/.next',
-];
+const ignores = require('./common/ignores');
 
 /**
  * @type {import('eslint').Linter.FlatConfig}
