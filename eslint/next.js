@@ -1,16 +1,19 @@
-const { FlatCompat } = require('@eslint/eslintrc');
 const ignores = require('./common/ignores');
 
-const compat = new FlatCompat({ baseDirectory: __dirname });
-
 /**
- * @type {import('eslint').Linter.FlatConfig}
+ * @type {(nextPlugin: import('eslint').ESLint.Plugin) => import('eslint').Linter.FlatConfig}
  */
-module.exports = {
-  ignores,
-  ...compat.extends('next'),
-  rules: {
-    // /app: The root layout actually does need a <head> element.
-    '@next/next/no-head-element': 'off',
-  },
+module.exports = (nextPlugin) => {
+  // We don't want to add the Next.js plugin as a dependency, so we just ask
+  // the caller to provide it (attempting to `require()` it here would
+  // fail).
+  return {
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    ignores,
+    plugins: { '@next/next': nextPlugin },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+    },
+  };
 };

@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@eslint/eslintrc': ^2.0.0
   '@eslint/js': ^8.35.0
   '@types/eslint': ^8.21.1
   '@types/node': ^18.14.6
@@ -19,7 +18,6 @@ specifiers:
   typescript: ^4.9.5
 
 dependencies:
-  '@eslint/eslintrc': 2.0.0
   '@eslint/js': 8.35.0
   '@typescript-eslint/eslint-plugin': 5.54.1_mlk7dnz565t663n4razh6a6v6i
   eslint: 8.35.0
