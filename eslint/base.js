@@ -10,11 +10,21 @@ module.exports = {
   files: ['**/*.{ts,tsx,js,jsx}'],
   ignores,
   plugins: { import: importPlugin },
+  // Fix for https://github.com/import-js/eslint-plugin-import/issues/2556
+  settings: {
+    "import/parsers": {
+      espree: [".js", ".cjs", ".mjs", ".jsx"],
+    },
+  },
   languageOptions: {
     globals: {
       ...globals.browser,
       ...globals.node,
     },
+    parserOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module'
+    }
   },
   rules: {
     ...eslintJs.configs.recommended.rules,
