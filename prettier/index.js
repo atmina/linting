@@ -19,6 +19,9 @@ module.exports = {
 
   // quoteProps: 'as-needed',
 
+  // Use single quotes instead of double quotes in JSX.
+  jsxSingleQuote: true,
+
   // Print trailing commas wherever possible in multi-line comma-separated syntactic structures.
   trailingComma: 'all',
 
