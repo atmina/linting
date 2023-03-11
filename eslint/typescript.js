@@ -6,7 +6,7 @@ const ignores = require('./common/ignores');
 /**
  * @type {import('eslint').Linter.FlatConfig}
  */
-module.exports = {
+const config = {
   files: ['**/*.{ts,tsx}'],
   ignores,
   plugins: { '@typescript-eslint': typescriptEslintPlugin },
@@ -39,3 +39,7 @@ module.exports = {
     ],
   },
 };
+
+config.settings['import/resolver'].typescript = true;
+
+module.exports = config;
