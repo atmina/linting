@@ -37,6 +37,10 @@ const config = {
         minimumDescriptionLength: 10,
       },
     ],
+    '@typescript-eslint/eslint no-unused-vars': [
+      'warn',
+      {ignoreRestSiblings: true},
+    ],
   },
 };
 
