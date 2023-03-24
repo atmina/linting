@@ -1,7 +1,7 @@
 const tailwindPlugin = require('eslint-plugin-tailwindcss');
 const ignores = require('./common/ignores');
 
-const { recommended } = tailwindPlugin.configs;
+const {recommended} = tailwindPlugin.configs;
 
 /**
  * @type {import('eslint').Linter.FlatConfig}
@@ -9,7 +9,7 @@ const { recommended } = tailwindPlugin.configs;
 module.exports = {
   files: ['**/*.tsx', '**/*.jsx'],
   ignores,
-  plugins: {'tailwindcss': tailwindPlugin},
+  plugins: {tailwindcss: tailwindPlugin},
   rules: {
     ...recommended.rules,
     'tailwindcss/no-custom-classname': 'off',

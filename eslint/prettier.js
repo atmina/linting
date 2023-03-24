@@ -13,7 +13,7 @@ const prettierOptions = require('../prettier');
 module.exports = {
   files: ['**/*.{ts,tsx,js,jsx}'],
   ignores,
-  plugins: { prettier: prettierPlugin },
+  plugins: {prettier: prettierPlugin},
   rules: {
     ...prettierOverrides.rules,
     ...prettierPlugin.configs.recommended.rules,

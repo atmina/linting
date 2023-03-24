@@ -9,7 +9,7 @@ const ignores = require('./common/ignores');
 const config = {
   files: ['**/*.{ts,tsx}'],
   ignores,
-  plugins: { '@typescript-eslint': typescriptEslintPlugin },
+  plugins: {'@typescript-eslint': typescriptEslintPlugin},
   languageOptions: {
     parser: typescriptEslintParser,
     parserOptions: {
@@ -27,7 +27,7 @@ const config = {
     '@typescript-eslint/consistent-type-exports': 'warn',
     '@typescript-eslint/consistent-type-imports': [
       'warn',
-      { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
+      {prefer: 'type-imports', fixStyle: 'inline-type-imports'},
     ],
     '@typescript-eslint/ban-ts-comment': [
       'error',

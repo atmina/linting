@@ -8,5 +8,5 @@ module.exports = [
   '**/.cache',
   '**/.storybook',
   '**/.next',
-  '**/*.generated*'
+  '**/*.generated*',
 ];
