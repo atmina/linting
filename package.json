@@ -1,6 +1,6 @@
 {
   "name": "@atmina/linting",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A collection of opinionated in-house linting rules.",
   "main": "index.js",
   "scripts": {},
@@ -20,7 +20,6 @@
     "@types/eslint": "^8.21.1",
     "@types/node": "^18.14.6",
     "@types/prettier": "^2.7.2",
-    "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",
     "prettier": "^2.8.4",
     "tailwindcss": "^3.2.7",
@@ -29,6 +28,7 @@
   "dependencies": {
     "@eslint/js": "^8.35.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
     "eslint-config-prettier": "^8.7.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-import": "^2.27.5",
