@@ -14,7 +14,12 @@ const config = {
     parser: typescriptEslintParser,
     parserOptions: {
       sourceType: 'module',
-      project: ['./tsconfig.json'],
+      project: [
+        './tsconfig.json',
+        // Some projects define separate tsconfigs for scripts/tools.
+        // https://typescript-eslint.io/linting/troubleshooting/#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file
+        './tsconfig.*.json',
+      ],
     },
   },
   settings: {
