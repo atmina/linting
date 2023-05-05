@@ -18,7 +18,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/eslint": "8.37.0",
-    "@types/node": "18.16.2",
+    "@types/node": "18.16.4",
     "@types/prettier": "2.7.2",
     "eslint": "8.39.0",
     "prettier": "2.8.8",
@@ -40,5 +40,5 @@
     "eslint": "^8.35.0",
     "prettier": "^2.8.4"
   },
-  "packageManager": "pnpm@8.3.1"
+  "packageManager": "pnpm@8.4.0"
 }
