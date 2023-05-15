@@ -12,6 +12,7 @@ module.exports = (nextPlugin) => {
     files: ['**/*.{ts,tsx,js,jsx}'],
     ignores,
     plugins: {'@next/next': nextPlugin, ...react.plugins},
+    settings: {...react.settings},
     rules: {
       ...nextPlugin.configs.recommended.rules,
       ...nextPlugin.configs['core-web-vitals'].rules,
