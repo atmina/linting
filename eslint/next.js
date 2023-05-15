@@ -1,4 +1,5 @@
 const ignores = require('./common/ignores');
+const react = require('./react');
 
 /**
  * @type {(nextPlugin: import('eslint').ESLint.Plugin) => import('eslint').Linter.FlatConfig}
@@ -10,10 +11,12 @@ module.exports = (nextPlugin) => {
   return {
     files: ['**/*.{ts,tsx,js,jsx}'],
     ignores,
-    plugins: {'@next/next': nextPlugin},
+    plugins: {'@next/next': nextPlugin, ...react.plugins},
+    settings: {...react.settings},
     rules: {
       ...nextPlugin.configs.recommended.rules,
       ...nextPlugin.configs['core-web-vitals'].rules,
+      ...react.rules,
     },
   };
 };
