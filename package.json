@@ -17,7 +17,7 @@
   "author": "ATMINA Solutions GmbH <info@atmina.de>",
   "license": "MIT",
   "devDependencies": {
-    "@types/eslint": "8.37.0",
+    "@types/eslint": "8.40.0",
     "@types/node": "18.16.14",
     "@types/prettier": "2.7.2",
     "eslint": "8.41.0",
