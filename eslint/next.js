@@ -1,4 +1,3 @@
-const ignores = require('./common/ignores');
 const react = require('./react');
 
 /**
@@ -10,7 +9,6 @@ module.exports = (nextPlugin) => {
   // fail).
   return {
     files: ['**/*.{ts,tsx,js,jsx}'],
-    ignores,
     plugins: {'@next/next': nextPlugin, ...react.plugins},
     settings: {...react.settings},
     rules: {

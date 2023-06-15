@@ -1,5 +1,4 @@
 const tailwindPlugin = require('eslint-plugin-tailwindcss');
-const ignores = require('./common/ignores');
 
 const {recommended} = tailwindPlugin.configs;
 
@@ -8,7 +7,6 @@ const {recommended} = tailwindPlugin.configs;
  */
 module.exports = {
   files: ['**/*.tsx', '**/*.jsx'],
-  ignores,
   plugins: {tailwindcss: tailwindPlugin},
   rules: {
     ...recommended.rules,

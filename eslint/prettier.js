@@ -4,7 +4,6 @@ const prettierPlugin = require('eslint-plugin-prettier');
 // Turns off all rules that are unnecessary or might conflict with Prettier.
 const prettierOverrides = require('eslint-config-prettier');
 
-const ignores = require('./common/ignores');
 const prettierOptions = require('../prettier');
 
 /**
@@ -12,7 +11,6 @@ const prettierOptions = require('../prettier');
  */
 module.exports = {
   files: ['**/*.{ts,tsx,js,jsx}'],
-  ignores,
   plugins: {prettier: prettierPlugin},
   rules: {
     ...prettierOverrides.rules,
