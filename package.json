@@ -23,7 +23,7 @@
     "eslint": "8.43.0",
     "prettier": "2.8.8",
     "tailwindcss": "3.3.2",
-    "typescript": "5.1.5"
+    "typescript": "5.1.6"
   },
   "dependencies": {
     "@eslint/js": "^8.35.0",
