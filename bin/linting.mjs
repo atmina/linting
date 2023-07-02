@@ -54,9 +54,9 @@ const createConfig = (pkg) => {
     : [];
 
   if (dependencies['tailwindcss']) {
-    console.log('+ Tailwind CSS')
+    console.log('+ Tailwind CSS');
     if (isEsm) {
-      imports.push(`import tailwind from '@atmina/linting/eslint/tailwind.js'`)
+      imports.push(`import tailwind from '@atmina/linting/eslint/tailwind.js'`);
       configs.push('tailwind');
     } else {
       configs.push(`require('@atmina/linting/eslint/tailwind')`);
@@ -64,9 +64,9 @@ const createConfig = (pkg) => {
   }
 
   if (dependencies['react'] || dependencies['next']) {
-    console.log('+ React')
+    console.log('+ React');
     if (isEsm) {
-      imports.push(`import react from '@atmina/linting/eslint/react.js'`)
+      imports.push(`import react from '@atmina/linting/eslint/react.js'`);
       configs.push('react');
     } else {
       configs.push(`require('@atmina/linting/eslint/react')`);
@@ -74,11 +74,11 @@ const createConfig = (pkg) => {
   }
 
   if (dependencies['next']) {
-    console.log('+ Next.js')
+    console.log('+ Next.js');
     if (isEsm) {
       imports.push(`import next from '@atmina/linting/eslint/next.js'`);
       imports.push(`import nextPlugin from '@next/eslint-plugin-next'`);
-      configs.push('next(nextPlugin)')
+      configs.push('next(nextPlugin)');
     } else {
       configs.push(`require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next'))`);
     }
@@ -123,12 +123,12 @@ const main = async () => {
   if (!hasConfig || await confirm('Overwrite existing eslint.config.js?')) {
     const config = createConfig(pkg);
     await writeFile(configPath, config, 'utf-8');
-    console.log('Created eslint.config.js')
+    console.log('Created eslint.config.js');
   }
 
   pkg['prettier'] = '@atmina/linting/prettier';
   await writeFile(packagePath, JSON.stringify(pkg, null, 2), 'utf-8');
-  console.log('Configured Prettier')
+  console.log('Configured Prettier');
   console.log('ATMINA Score increased! 📈');
 }
 
