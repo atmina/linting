@@ -1,3 +1,3 @@
 @echo off
 
-node "%~dp0\inting.mjs" %*
+node "%~dp0\linting.mjs" %*
