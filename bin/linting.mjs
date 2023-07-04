@@ -63,7 +63,8 @@ const createConfig = (pkg) => {
     }
   }
 
-  if (dependencies['react'] || dependencies['next']) {
+  // React config is included in the Next.js config
+  if (dependencies['react'] && !dependencies['next']) {
     console.log('+ React');
     if (isEsm) {
       imports.push(`import react from '@atmina/linting/eslint/react.js'`);
