@@ -11,9 +11,9 @@ ESLint configuration is provided in the `eslint.config.js`, aka. "Flat Config" f
 
 1. Install
    ```sh
-   yarn add @atmina/linting
+   yarn add -D @atmina/linting
    # or
-   pnpm add @atmina/linting
+   pnpm add -D @atmina/linting
    ```
 2. Run the CLI tool
    ```sh
