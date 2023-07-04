@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { dirname, resolve } from "node:path";
 import { readFile, writeFile } from "node:fs/promises";
 import { pkgUp } from "pkg-up";

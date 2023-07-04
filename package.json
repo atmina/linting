@@ -1,6 +1,6 @@
 {
   "name": "@atmina/linting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of opinionated in-house linting rules.",
   "main": "index.js",
   "scripts": {},
