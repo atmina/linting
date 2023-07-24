@@ -8,6 +8,7 @@ module.exports = {
     '**/storybook-static/*',
     '**/.cache/*',
     '**/.next/*',
+    '**/.vite/*',
     '**/*.generated*',
     '**/__generated__/*',
   ]
