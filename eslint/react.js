@@ -1,4 +1,5 @@
 const reactPlugin = require('eslint-plugin-react');
+const reactHooksPlugin = require('eslint-plugin-react-hooks');
 
 const {recommended, 'jsx-runtime': jsxRuntime} = reactPlugin.configs;
 
@@ -7,7 +8,7 @@ const {recommended, 'jsx-runtime': jsxRuntime} = reactPlugin.configs;
  */
 module.exports = {
   files: ['**/*.tsx', '**/*.jsx'],
-  plugins: {react: reactPlugin},
+  plugins: {react: reactPlugin, 'react-hooks': reactHooksPlugin},
   settings: {
     'react': {
       version: 'detect',
@@ -16,6 +17,7 @@ module.exports = {
   rules: {
     ...recommended.rules,
     ...jsxRuntime.rules,
+    ...reactHooksPlugin.configs.recommended.rules,
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/jsx-curly-brace-presence': ['error', 'never'],
