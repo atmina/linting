@@ -31,7 +31,7 @@ dependencies:
     version: 2.27.5(@typescript-eslint/parser@6.0.0)(eslint-import-resolver-typescript@3.5.3)(eslint@8.46.0)
   eslint-plugin-prettier:
     specifier: ^5.0.0-alpha.2
-    version: 5.0.0-alpha.2(@types/eslint@8.44.1)(eslint-config-prettier@8.7.0)(eslint@8.46.0)(prettier@3.0.0)
+    version: 5.0.0-alpha.2(@types/eslint@8.44.1)(eslint-config-prettier@8.7.0)(eslint@8.46.0)(prettier@3.0.1)
   eslint-plugin-react:
     specifier: ^7.32.2
     version: 7.32.2(eslint@8.46.0)
@@ -62,8 +62,8 @@ devDependencies:
     specifier: 8.46.0
     version: 8.46.0
   prettier:
-    specifier: 3.0.0
-    version: 3.0.0
+    specifier: 3.0.1
+    version: 3.0.1
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
@@ -796,7 +796,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-prettier@5.0.0-alpha.2(@types/eslint@8.44.1)(eslint-config-prettier@8.7.0)(eslint@8.46.0)(prettier@3.0.0):
+  /eslint-plugin-prettier@5.0.0-alpha.2(@types/eslint@8.44.1)(eslint-config-prettier@8.7.0)(eslint@8.46.0)(prettier@3.0.1):
     resolution: {integrity: sha512-F6YBCbrRzvZwcINw3crm1+/uX/i+rJYaFErPtwCfUoPLywRfY7pwBtI3yMe5OpIotuaiws8cd29oM80ca6NQSQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -813,7 +813,7 @@ packages:
       '@types/eslint': 8.44.1
       eslint: 8.46.0
       eslint-config-prettier: 8.7.0(eslint@8.46.0)
-      prettier: 3.0.0
+      prettier: 3.0.1
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.5
     dev: false
@@ -1765,8 +1765,8 @@ packages:
       fast-diff: 1.2.0
     dev: false
 
-  /prettier@3.0.0:
-    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+  /prettier@3.0.1:
+    resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
     engines: {node: '>=14'}
     hasBin: true
 
