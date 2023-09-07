@@ -42,5 +42,6 @@ module.exports = {
         alphabetize: {order: 'asc', caseInsensitive: true},
       },
     ],
+    'no-console': ['error', {allow: ['info', 'warn', 'error']}],
   },
 };
