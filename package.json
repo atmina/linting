@@ -14,6 +14,7 @@
   ],
   "files": [
     "index.js",
+    ".prettierignore",
     "/eslint",
     "/prettier"
   ],
