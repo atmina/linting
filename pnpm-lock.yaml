@@ -31,7 +31,7 @@ dependencies:
     version: 2.27.5(@typescript-eslint/parser@6.0.0)(eslint-import-resolver-typescript@3.5.3)(eslint@8.51.0)
   eslint-plugin-prettier:
     specifier: ^5.0.0-alpha.2
-    version: 5.0.0-alpha.2(@types/eslint@8.44.3)(eslint-config-prettier@9.0.0)(eslint@8.51.0)(prettier@3.0.3)
+    version: 5.0.0-alpha.2(@types/eslint@8.44.4)(eslint-config-prettier@9.0.0)(eslint@8.51.0)(prettier@3.0.3)
   eslint-plugin-react:
     specifier: ^7.32.2
     version: 7.32.2(eslint@8.51.0)
@@ -50,8 +50,8 @@ dependencies:
 
 devDependencies:
   '@types/eslint':
-    specifier: 8.44.3
-    version: 8.44.3
+    specifier: 8.44.4
+    version: 8.44.4
   '@types/node':
     specifier: 18.18.4
     version: 18.18.4
@@ -212,8 +212,8 @@ packages:
       sisteransi: 1.0.5
     dev: false
 
-  /@types/eslint@8.44.3:
-    resolution: {integrity: sha512-iM/WfkwAhwmPff3wZuPLYiHX18HI24jU8k1ZSH7P8FHwxTjZ2P6CoX2wnF43oprR+YXJM6UUxATkNvyv/JHd+g==}
+  /@types/eslint@8.44.4:
+    resolution: {integrity: sha512-lOzjyfY/D9QR4hY9oblZ76B90MYTB3RrQ4z2vBIJKj9ROCRqdkYl2gSUx1x1a4IWPjKJZLL4Aw1Zfay7eMnmnA==}
     dependencies:
       '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
@@ -796,7 +796,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-prettier@5.0.0-alpha.2(@types/eslint@8.44.3)(eslint-config-prettier@9.0.0)(eslint@8.51.0)(prettier@3.0.3):
+  /eslint-plugin-prettier@5.0.0-alpha.2(@types/eslint@8.44.4)(eslint-config-prettier@9.0.0)(eslint@8.51.0)(prettier@3.0.3):
     resolution: {integrity: sha512-F6YBCbrRzvZwcINw3crm1+/uX/i+rJYaFErPtwCfUoPLywRfY7pwBtI3yMe5OpIotuaiws8cd29oM80ca6NQSQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -810,7 +810,7 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      '@types/eslint': 8.44.3
+      '@types/eslint': 8.44.4
       eslint: 8.51.0
       eslint-config-prettier: 9.0.0(eslint@8.51.0)
       prettier: 3.0.3
