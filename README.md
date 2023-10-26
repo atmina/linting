@@ -3,7 +3,7 @@
 A collection of optionated in-house linting rules.
 
 - ESLint with TypeScript
-- Prettier (via ESLint)
+- Prettier (as of version 2.0, this is [no longer integrated as an ESLint plugin](https://prettier.io/docs/en/integrating-with-linters.html#notes))
 
 ESLint configuration is provided in the `eslint.config.js`, aka. "Flat Config" format.
 
