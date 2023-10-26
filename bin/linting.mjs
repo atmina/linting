@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
 import {dirname, resolve} from 'node:path';
-import {readFile, writeFile} from 'node:fs/promises';
+import {copyFile, readFile, writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {pkgUp} from 'pkg-up';
 import {parseNi, run as runNi, getCommand, detect} from '@antfu/ni';
 // ni uses this so we do too
 import prompts from '@posva/prompts';
-import {copyFile} from 'fs/promises';
 
 const TEMPLATE_CJS = `
 /**
