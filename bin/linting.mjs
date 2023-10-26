@@ -1,26 +1,23 @@
 #!/usr/bin/env node
 
-import { dirname, resolve } from "node:path";
-import { readFile, writeFile } from "node:fs/promises";
-import { pkgUp } from "pkg-up";
-import { parseNi, run as runNi } from "@antfu/ni";
+import {dirname, resolve} from 'node:path';
+import {copyFile, readFile, writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {pkgUp} from 'pkg-up';
+import {parseNi, run as runNi, getCommand, detect} from '@antfu/ni';
 // ni uses this so we do too
-import prompts from "@posva/prompts";
+import prompts from '@posva/prompts';
 
-const TEMPLATE_HEADER = '/* eslint-disable */';
-
-const TEMPLATE_CJS = `${TEMPLATE_HEADER}
-
+const TEMPLATE_CJS = `
 /**
  * @type {import('eslint').Linter.FlatConfig[]}
  */
 module.exports = [
 {{configs}}
 ];
-`;
+`.trimStart();
 
-const TEMPLATE_ESM = `${TEMPLATE_HEADER}
-
+const TEMPLATE_ESM = `
 {{imports}}
 
 /**
@@ -31,22 +28,33 @@ const config = [
 ];
  
 export default config;
-`;
-
-
+`.trimStart();
 
 const ni = (args) => {
   return runNi(parseNi, args);
-}
+};
 
 const confirm = async (message) => {
-  return (await prompts({type: 'confirm', name: 'confirm', message: message, initial: true })).confirm;
-}
+  return (
+    await prompts({
+      type: 'confirm',
+      name: 'confirm',
+      message: message,
+      initial: true,
+    })
+  ).confirm;
+};
 
 const createConfig = (pkg) => {
   const isEsm = pkg.type === 'module';
-  console.log('Format (based on package.json -> type):', isEsm ? 'ES Module' : 'CommonJS');
-  const dependencies = pkg.dependencies ?? {};
+  console.info(
+    'Format (based on package.json -> type):',
+    isEsm ? 'ES Module' : 'CommonJS',
+  );
+  const dependencies = new Set([
+    ...Object.keys(pkg.dependencies ?? {}),
+    ...Object.keys(pkg.devDependencies ?? {}),
+  ]);
   const template = isEsm ? TEMPLATE_ESM : TEMPLATE_CJS;
   const configs = isEsm
     ? ['...recommended']
@@ -55,8 +63,8 @@ const createConfig = (pkg) => {
     ? [`import recommended from '@atmina/linting/eslint/recommended.js'`]
     : [];
 
-  if (dependencies['tailwindcss']) {
-    console.log('+ Tailwind CSS');
+  if (dependencies.has('tailwindcss')) {
+    console.info('+ Tailwind CSS');
     if (isEsm) {
       imports.push(`import tailwind from '@atmina/linting/eslint/tailwind.js'`);
       configs.push('tailwind');
@@ -66,8 +74,8 @@ const createConfig = (pkg) => {
   }
 
   // React config is included in the Next.js config
-  if (dependencies['react'] && !dependencies['next']) {
-    console.log('+ React');
+  if (dependencies.has('react') && !dependencies.has('next')) {
+    console.info('+ React');
     if (isEsm) {
       imports.push(`import react from '@atmina/linting/eslint/react.js'`);
       configs.push('react');
@@ -76,21 +84,23 @@ const createConfig = (pkg) => {
     }
   }
 
-  if (dependencies['next']) {
-    console.log('+ Next.js');
+  if (dependencies.has('next')) {
+    console.info('+ Next.js');
     if (isEsm) {
       imports.push(`import next from '@atmina/linting/eslint/next.js'`);
       imports.push(`import nextPlugin from '@next/eslint-plugin-next'`);
       configs.push('next(nextPlugin)');
     } else {
-      configs.push(`require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next'))`);
+      configs.push(
+        `require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next'))`,
+      );
     }
   }
 
   return template
-    .replace('{{configs}}', configs.map(config => `  ${config},`).join('\n'))
-    .replace('{{imports}}', imports.map(imp => `${imp};`).join('\n'));
-}
+    .replace('{{configs}}', configs.map((config) => `  ${config},`).join('\n'))
+    .replace('{{imports}}', imports.map((imp) => `${imp};`).join('\n'));
+};
 
 const main = async () => {
   const packagePath = await pkgUp();
@@ -98,10 +108,19 @@ const main = async () => {
     console.error('No package.json found');
     return;
   }
+
   let pkg = JSON.parse(await readFile(packagePath, 'utf-8'));
-  if (!await confirm(`This will set up linting in the "${pkg.name ?? ''}" package. Continue?`)) {
+
+  if (
+    !(await confirm(
+      `This will set up linting in the "${pkg.name ?? ''}" package. Continue?`,
+    ))
+  ) {
     return;
   }
+
+  const packageManager = await detect({programmatic: true, cwd: packagePath});
+
   await ni([
     // Install as devDependencies
     '-D',
@@ -109,8 +128,9 @@ const main = async () => {
     'prettier',
     // Enables autocomplete in eslint.config.js
     '@types/eslint',
-    '@atmina/linting'
+    '@atmina/linting',
   ]);
+
   // Read again after package update
   pkg = JSON.parse(await readFile(packagePath, 'utf-8'));
   const configPath = resolve(dirname(packagePath), 'eslint.config.js');
@@ -123,16 +143,51 @@ const main = async () => {
       return;
     }
   }
-  if (!hasConfig || await confirm('Overwrite existing eslint.config.js?')) {
+  if (!hasConfig || (await confirm('Overwrite existing eslint.config.js?'))) {
     const config = createConfig(pkg);
+    console.log(configPath);
     await writeFile(configPath, config, 'utf-8');
-    console.log('Created eslint.config.js');
+    console.info('Created eslint.config.js');
+  }
+
+  const prettierIgnorePath = resolve(dirname(packagePath), '.prettierignore');
+  let hasPrettierIgnore = false;
+  try {
+    hasPrettierIgnore = !!(await readFile(configPath, 'utf-8'));
+  } catch (e) {
+    if (e.code !== 'ENOENT') {
+      console.error(e);
+      return;
+    }
+  }
+  if (
+    !hasPrettierIgnore ||
+    (await confirm('Overwrite existing .prettierignore?'))
+  ) {
+    const prettierIgnoreSource = resolve(
+      dirname(fileURLToPath(import.meta.url)),
+      '../.prettierignore',
+    );
+    await copyFile(prettierIgnoreSource, prettierIgnorePath);
+  }
+
+  if (await confirm('Add commands to package.json scripts?')) {
+    const scripts = (pkg.scripts ??= {});
+    const run = getCommand.bind(null, packageManager, 'run');
+    const additionalEslintArgs =
+      '--report-unused-disable-directives --max-warnings 0';
+    scripts['lint'] = `${run(['lint:fix'])} && ${run(['prettier:fix'])}`;
+    scripts['lint:check'] = `eslint . ${additionalEslintArgs}`;
+    scripts['lint:fix'] = `eslint . --fix ${additionalEslintArgs}`;
+    scripts['prettier:check'] = 'prettier . --check';
+    scripts['prettier:fix'] = 'prettier . --write';
   }
 
   pkg['prettier'] = '@atmina/linting/prettier';
+
   await writeFile(packagePath, JSON.stringify(pkg, null, 2), 'utf-8');
-  console.log('Configured Prettier');
-  console.log('ATMINA Score increased! 📈');
-}
+
+  console.info('ATMINA Score increased! 📈');
+};
 
 void main();
