@@ -1,0 +1,8 @@
+{
+  "include": ["prettier/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+  }
+}
