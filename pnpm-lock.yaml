@@ -37,7 +37,7 @@ dependencies:
     version: 4.6.0(eslint@8.55.0)
   eslint-plugin-tailwindcss:
     specifier: ^3.10.1
-    version: 3.10.1(tailwindcss@3.3.5)
+    version: 3.10.1(tailwindcss@3.3.6)
   globals:
     specifier: ^13.20.0
     version: 13.20.0
@@ -62,8 +62,8 @@ devDependencies:
     specifier: 3.1.0
     version: 3.1.0
   tailwindcss:
-    specifier: 3.3.5
-    version: 3.3.5
+    specifier: 3.3.6
+    version: 3.3.6
   typescript:
     specifier: 5.3.2
     version: 5.3.2
@@ -833,7 +833,7 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: false
 
-  /eslint-plugin-tailwindcss@3.10.1(tailwindcss@3.3.5):
+  /eslint-plugin-tailwindcss@3.10.1(tailwindcss@3.3.6):
     resolution: {integrity: sha512-NLPZ6b6nd/8CgGNMQ6NDiPUfBLQpSGu/u9RyX3MCZOwzNs2dFt1OamNAiRuo3Ixh7Gv4t5UcAcdNt8z74UDJkA==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -841,7 +841,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
-      tailwindcss: 3.3.5
+      tailwindcss: 3.3.6
     dev: false
 
   /eslint-scope@5.1.1:
@@ -1965,8 +1965,8 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /tailwindcss@3.3.5:
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
+  /tailwindcss@3.3.6:
+    resolution: {integrity: sha512-AKjF7qbbLvLaPieoKeTjG1+FyNZT6KaJMJPFeQyLfIp7l82ggH1fbHJSsYIvnbTFQOlkh+gBYpyby5GT1LIdLw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
