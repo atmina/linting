@@ -5,6 +5,8 @@ module.exports = {
   ignores: [
     '**/build/*',
     '**/dist/*',
+    '**/dist-*/*',
+    '**/release/*',
     '**/storybook-static/*',
     '**/.cache/*',
     '**/.next/*',
