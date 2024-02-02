@@ -42,7 +42,7 @@ module.exports = {
         alphabetize: {order: 'asc', caseInsensitive: true},
       },
     ],
-    'arrow-body-style': ['warn', 'never'],
+    'arrow-body-style': ['warn', 'as-needed'],
     'no-console': ['warn', {allow: ['info', 'warn', 'error', 'debug']}],
   },
 };

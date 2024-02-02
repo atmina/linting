@@ -21,7 +21,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/jsx-boolean-value': 'warn',
-    'react/jsx-curly-brace-presence': ['warn', 'as-needed'],
+    'react/jsx-curly-brace-presence': ['warn', 'never'],
     'react/jsx-no-useless-fragment': 'warn',
     'react/self-closing-comp': 'warn',
   },
