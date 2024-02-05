@@ -42,6 +42,7 @@ module.exports = {
         alphabetize: {order: 'asc', caseInsensitive: true},
       },
     ],
-    'no-console': ['error', {allow: ['info', 'warn', 'error']}],
+    'arrow-body-style': ['warn', 'as-needed'],
+    'no-console': ['warn', {allow: ['info', 'warn', 'error', 'debug']}],
   },
 };

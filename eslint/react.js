@@ -10,7 +10,7 @@ module.exports = {
   files: ['**/*.tsx', '**/*.jsx'],
   plugins: {react: reactPlugin, 'react-hooks': reactHooksPlugin},
   settings: {
-    'react': {
+    react: {
       version: 'detect',
     },
   },
@@ -20,6 +20,9 @@ module.exports = {
     ...reactHooksPlugin.configs.recommended.rules,
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
-    'react/jsx-curly-brace-presence': ['error', 'never'],
+    'react/jsx-boolean-value': 'warn',
+    'react/jsx-curly-brace-presence': ['warn', 'never'],
+    'react/jsx-no-useless-fragment': 'warn',
+    'react/self-closing-comp': 'warn',
   },
 };
