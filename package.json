@@ -40,7 +40,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-tailwindcss": "^3.10.1",
+    "eslint-plugin-tailwindcss": "^3.14.2",
     "globals": "^13.20.0",
     "pkg-up": "^4.0.0"
   },
