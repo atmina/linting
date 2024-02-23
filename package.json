@@ -24,7 +24,7 @@
     "@types/eslint": "8.56.3",
     "@types/node": "20.11.20",
     "@types/prettier": "2.7.3",
-    "eslint": "8.56.0",
+    "eslint": "8.57.0",
     "prettier": "3.2.5",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3"
