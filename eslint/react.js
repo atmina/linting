@@ -7,7 +7,7 @@ const {recommended, 'jsx-runtime': jsxRuntime} = reactPlugin.configs;
  * @type {import('eslint').Linter.FlatConfig}
  */
 module.exports = {
-  files: ['**/*.tsx', '**/*.jsx'],
+  files: ['**/*.{ts,tsx,js,jsx}'],
   plugins: {react: reactPlugin, 'react-hooks': reactHooksPlugin},
   settings: {
     react: {
