@@ -8,12 +8,6 @@ const globals = require('globals');
 module.exports = {
   files: ['**/*.{ts,tsx,js,jsx}'],
   plugins: {import: importPlugin},
-  // Fix for https://github.com/import-js/eslint-plugin-import/issues/2556
-  settings: {
-    'import/parsers': {
-      espree: ['.js', '.cjs', '.mjs', '.jsx'],
-    },
-  },
   languageOptions: {
     globals: {
       ...globals.browser,
@@ -26,7 +20,6 @@ module.exports = {
   },
   rules: {
     ...eslintJs.configs.recommended.rules,
-    ...importPlugin.configs.recommended.rules,
     'import/order': [
       'warn',
       {
