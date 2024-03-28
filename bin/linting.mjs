@@ -133,10 +133,10 @@ const main = async () => {
 
   // Read again after package update
   pkg = JSON.parse(await readFile(packagePath, 'utf-8'));
-  const configPath = resolve(dirname(packagePath), 'eslint.config.js');
+  const eslintConfigPath = resolve(dirname(packagePath), 'eslint.config.js');
   let hasConfig = false;
   try {
-    hasConfig = !!(await readFile(configPath, 'utf-8'));
+    hasConfig = !!(await readFile(eslintConfigPath, 'utf-8'));
   } catch (e) {
     if (e.code !== 'ENOENT') {
       console.error(e);
@@ -145,15 +145,15 @@ const main = async () => {
   }
   if (!hasConfig || (await confirm('Overwrite existing eslint.config.js?'))) {
     const config = createConfig(pkg);
-    console.log(configPath);
-    await writeFile(configPath, config, 'utf-8');
+    console.log(eslintConfigPath);
+    await writeFile(eslintConfigPath, config, 'utf-8');
     console.info('Created eslint.config.js');
   }
 
   const prettierIgnorePath = resolve(dirname(packagePath), '.prettierignore');
   let hasPrettierIgnore = false;
   try {
-    hasPrettierIgnore = !!(await readFile(configPath, 'utf-8'));
+    hasPrettierIgnore = !!(await readFile(prettierIgnorePath, 'utf-8'));
   } catch (e) {
     if (e.code !== 'ENOENT') {
       console.error(e);
