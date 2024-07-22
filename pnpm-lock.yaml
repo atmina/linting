@@ -49,8 +49,8 @@ importers:
         version: 5.0.0
     devDependencies:
       '@types/eslint':
-        specifier: 8.56.10
-        version: 8.56.10
+        specifier: 9.6.0
+        version: 9.6.0
       '@types/node':
         specifier: 20.14.11
         version: 20.14.11
@@ -167,8 +167,8 @@ packages:
     resolution: {integrity: sha512-8aPwklhbSV2VN/NQMBNFkuo8+hlJVdcFRXp4NCIfdcahh3qNEcaSoD8qXjru0OlN1sONJ7le7p6+YUbALaG6Mg==}
     engines: {node: '>= 14'}
 
-  '@types/eslint@8.56.10':
-    resolution: {integrity: sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==}
+  '@types/eslint@9.6.0':
+    resolution: {integrity: sha512-gi6WQJ7cHRgZxtkQEoyHMppPjq9Kxo5Tjn2prSKDSmZrCz8TZ3jSRCeTJm+WoM+oB0WG37bRqLzaaU3q7JypGg==}
 
   '@types/estree@1.0.0':
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
@@ -1350,7 +1350,7 @@ snapshots:
       kleur: 4.1.5
       sisteransi: 1.0.5
 
-  '@types/eslint@8.56.10':
+  '@types/eslint@9.6.0':
     dependencies:
       '@types/estree': 1.0.0
       '@types/json-schema': 7.0.15
