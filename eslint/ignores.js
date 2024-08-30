@@ -8,6 +8,7 @@ module.exports = {
     '**/dist-*/*',
     '**/release/*',
     '**/storybook-static/*',
+    '**/out/*',
     '**/.cache/*',
     '**/.next/*',
     '**/.vite/*',
