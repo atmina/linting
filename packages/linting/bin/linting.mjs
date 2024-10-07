@@ -91,8 +91,10 @@ const createConfig = (pkg) => {
       imports.push(`import nextPlugin from '@next/eslint-plugin-next'`);
       configs.push('next(nextPlugin)');
     } else {
+      // TODO - Remove compat layer once https://github.com/vercel/next.js/issues/64409 is closed
+      imports.push(`const {fixupConfigRules} = require('@eslint/compat')`);
       configs.push(
-        `require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next'))`,
+        `...fixupConfigRules(require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next')))`,
       );
     }
   }
@@ -128,6 +130,8 @@ const main = async () => {
     'prettier',
     // Enables autocomplete in eslint.config.js
     '@types/eslint',
+    // Required for linting next - TODO remove once https://github.com/vercel/next.js/issues/64409 is merged
+    '@eslint/compat',
     '@atmina/linting',
   ]);
 
