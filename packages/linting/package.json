@@ -1,6 +1,6 @@
 {
   "name": "@atmina/linting",
-  "version": "3.0.0",
+  "version": "2.3.0",
   "description": "A collection of opinionated in-house linting rules.",
   "main": "index.js",
   "scripts": {},
@@ -21,6 +21,7 @@
   "author": "ATMINA Solutions GmbH <info@atmina.de>",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/compat": "^1.2.0",
     "@types/eslint": "9.6.1",
     "@types/node": "20.16.10",
     "@types/prettier": "3.0.0",

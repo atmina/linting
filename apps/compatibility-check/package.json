@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "@atmina/linting": "workspace:*",
-    "@eslint/compat": "^1.2.0",
     "@next/eslint-plugin-next": "^14.2.14",
     "@types/eslint": "9.6.1",
     "@types/node": "^20",
