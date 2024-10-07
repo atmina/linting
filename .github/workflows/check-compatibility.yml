@@ -1,4 +1,4 @@
-name: "Check package compatibility"
+name: "Check compatibility"
 
 on:
   push:
@@ -10,6 +10,7 @@ on:
 
 jobs:
   check-compatibility:
+    name: 'Check compatibility'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -27,6 +28,9 @@ jobs:
         with:
           cache: pnpm
           node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Override ESLint
         working-directory: apps/compatibility-check
