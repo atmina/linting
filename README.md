@@ -23,6 +23,27 @@ ESLint configuration is provided in the `eslint.config.js`, aka. "Flat Config" f
    ```
    This will set up the necessary dependencies and configurations for you.
 
+## Migration von v2 to v3
+
+When upgrading from `@atmina/linting@^2` to `@^3` in a Next project, a few changes are currently required:
+1. Add `@eslint/compat` as a dev-dependency to the Next project
+2. Update your `eslint.config.js` by wrapping the next plugin's config with `fixupConfigRules`:
+```diff
+// For CJS
++ const {fixupConfigRules} = require('@eslint/compat');
+// ...
+- require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next')),
++ ...fixupConfigRules(
++   require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next')),
++ ),
+
+// For ESM
+import {fixupConfigRules} from '@eslint/compat';
+// ...
+- next(nextPlugin),
++ fixupConfigRules(next(nextPlugin)),
+```
+
 ## IDE Integration
 In VS Code, use these workspace settings:
 
