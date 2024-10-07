@@ -15,3 +15,20 @@ jobs:
       matrix:
         node: [18, 20, 22]
         eslint: [8, 9]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        name: Setup node
+        with:
+          cache: pnpm
+          node-version: ${{ matrix.node }}
+
+      - name: Override ESLint
+        working-directory: apps/compatibility-check
+        run: pnpm install -D eslint@${{ matrix.eslint }}
+
+      - name: Lint project
+        working-directory: apps/compatibility-check
+        run: pnpm run lint
