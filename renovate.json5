@@ -3,11 +3,7 @@
   "automerge": true,
   "automergeStrategy": "rebase",
   "automergeType": "pr",
-  // Needed, because we don't actually have tests; ignoreTests will ignore any status checks and force renovate to merge
-  //  If we ever have status checks and tests, this will have to be removed / set to false
-  //  https://docs.renovatebot.com/configuration-options/#automergetype
-  //  https://docs.renovatebot.com/configuration-options/#ignoretests
-  "ignoreTests": true,
+  "ignoreTests": false,
   "extends": [
     "config:js-lib",
     "group:all"
