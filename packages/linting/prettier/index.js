@@ -1,5 +1,5 @@
 /**
- * @type {import('prettier').Config}
+ * @type {import('prettier/index').Config}
  */
 module.exports = {
   // Note: Defaults are commented out.

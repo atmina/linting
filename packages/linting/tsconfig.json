@@ -1,5 +1,7 @@
 {
-  "include": ["prettier/**/*"],
+  "include": [
+    "packages/linting/prettier/**/*"
+  ],
   "compilerOptions": {
     "allowJs": true,
     "declaration": true,

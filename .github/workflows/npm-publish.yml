@@ -12,10 +12,11 @@ jobs:
       - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           registry-url: https://registry.npmjs.org/
       - run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       # - run: pnpm install --frozen-lockfile
       - run: pnpm publish --access public --no-git-checks
+        working-directory: packages/linting
