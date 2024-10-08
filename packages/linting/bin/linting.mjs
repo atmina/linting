@@ -91,7 +91,9 @@ const createConfig = (pkg) => {
       imports.push(`import nextPlugin from '@next/eslint-plugin-next'`);
       configs.push('next(nextPlugin)');
     } else {
-      configs.push(`require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next'))`);
+      configs.push(
+        `require('@atmina/linting/eslint/next')(require('@next/eslint-plugin-next'))`,
+      );
     }
   }
 
@@ -122,10 +124,10 @@ const main = async () => {
   await ni([
     // Install as devDependencies
     '-D',
-    'eslint',
-    'prettier',
+    'eslint@^9',
+    'prettier@^3',
     // Enables autocomplete in eslint.config.js
-    '@types/eslint',
+    '@types/eslint@^9',
     '@atmina/linting',
   ]);
 
