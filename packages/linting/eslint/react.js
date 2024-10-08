@@ -1,3 +1,4 @@
+const {fixupPluginRules} = require('@eslint/compat');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 
@@ -8,7 +9,12 @@ const {recommended, 'jsx-runtime': jsxRuntime} = reactPlugin.configs;
  */
 module.exports = {
   files: ['**/*.{ts,tsx,js,jsx}'],
-  plugins: {react: reactPlugin, 'react-hooks': reactHooksPlugin},
+  plugins: {
+    react: reactPlugin,
+    // This can be removed when eslint-plugin-react supports ESLint 9 by itself.
+    // Track https://github.com/facebook/react/issues/28313
+    'react-hooks': fixupPluginRules(reactHooksPlugin),
+  },
   settings: {
     react: {
       version: 'detect',

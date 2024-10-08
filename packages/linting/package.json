@@ -1,0 +1,52 @@
+{
+  "name": "@atmina/linting",
+  "version": "3.0.0",
+  "description": "A collection of opinionated in-house linting rules.",
+  "main": "index.js",
+  "scripts": {},
+  "bin": {
+    "linting": "bin/linting.mjs"
+  },
+  "keywords": [
+    "eslint",
+    "prettier",
+    "typescript"
+  ],
+  "files": [
+    "index.js",
+    ".prettierignore",
+    "eslint",
+    "prettier"
+  ],
+  "author": "ATMINA Solutions GmbH <info@atmina.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/eslint": "9.6.1",
+    "@types/node": "20.16.10",
+    "@types/prettier": "3.0.0",
+    "eslint": "9.12.0",
+    "prettier": "3.3.3",
+    "tailwindcss": "3.4.13",
+    "typescript": "5.6.2"
+  },
+  "dependencies": {
+    "@antfu/ni": "^0.23.0",
+    "@eslint/compat": "^1.2.0",
+    "@eslint/js": "^9.0.0",
+    "@posva/prompts": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tailwindcss": "^3.14.2",
+    "globals": "^15.0.0",
+    "pkg-up": "^5.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
+  }
+}

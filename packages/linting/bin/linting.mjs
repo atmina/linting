@@ -124,10 +124,10 @@ const main = async () => {
   await ni([
     // Install as devDependencies
     '-D',
-    'eslint',
-    'prettier',
+    'eslint@^9',
+    'prettier@^3',
     // Enables autocomplete in eslint.config.js
-    '@types/eslint',
+    '@types/eslint@^9',
     '@atmina/linting',
   ]);
 
