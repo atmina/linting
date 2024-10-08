@@ -17,7 +17,7 @@ module.exports = (nextPlugin) => {
       ...nextPlugin.configs['core-web-vitals'].rules,
       ...react.rules,
     },
-  // fixupConfigRules always returns an array. Since we only pass one object, it should be safe to just return the first
-  // element to avoid a breaking change
+    // fixupConfigRules always returns an array. Since we only pass one object, it should be safe to just return the first
+    // element to avoid a breaking change
   })[0];
 };
