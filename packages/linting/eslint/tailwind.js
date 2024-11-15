@@ -3,7 +3,7 @@ const tailwindPlugin = require('eslint-plugin-tailwindcss');
 const {recommended} = tailwindPlugin.configs;
 
 /**
- * @type {import('eslint').Linter.FlatConfig}
+ * @type {import('eslint').Linter.Config}
  */
 module.exports = {
   files: ['**/*.tsx', '**/*.jsx'],
@@ -15,7 +15,7 @@ module.exports = {
   // https://github.com/francoismassart/eslint-plugin-tailwindcss#more-settings
   settings: {
     tailwindcss: {
-      callees: ['classNames', 'clsx', 'ctl', 'twMerge'],
+      callees: ['classNames', 'clsx', 'cn', 'ctl', 'twMerge'],
     }
   },
   languageOptions: {
