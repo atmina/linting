@@ -3,7 +3,7 @@
 import {dirname, resolve} from 'node:path';
 import {copyFile, readFile, writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import {pkgUp} from 'pkg-up';
+import {packageUp} from 'package-up';
 import {parseNi, run as runNi, getCommand, detect} from '@antfu/ni';
 // ni uses this so we do too
 import prompts from '@posva/prompts';
@@ -103,7 +103,7 @@ const createConfig = (pkg) => {
 };
 
 const main = async () => {
-  const packagePath = await pkgUp();
+  const packagePath = await packageUp();
   if (!packagePath) {
     console.error('No package.json found');
     return;
