@@ -173,10 +173,13 @@ const main = async () => {
 
   if (await confirm('Add commands to package.json scripts?')) {
     const scripts = (pkg.scripts ??= {});
-    const run = getCommand.bind(null, packageManager, 'run');
+    const run = (...params) => {
+      const {command, args} = getCommand(packageManager, 'run', params);
+      return `${command} ${args.join(' ')}`;
+    };
     const additionalEslintArgs =
       '--report-unused-disable-directives --max-warnings 0';
-    scripts['lint'] = `${run(['lint:fix'])} && ${run(['prettier:fix'])}`;
+    scripts['lint'] = `${run('lint:fix')} && ${run('prettier:fix')}`;
     scripts['lint:check'] = `eslint . ${additionalEslintArgs}`;
     scripts['lint:fix'] = `eslint . --fix ${additionalEslintArgs}`;
     scripts['prettier:check'] = 'prettier . --check';
