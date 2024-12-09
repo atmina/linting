@@ -1,6 +1,6 @@
 # @atmina/linting
 
-A collection of optionated in-house linting rules.
+A collection of opinionated in-house linting rules.
 
 - ESLint with TypeScript
 - Prettier (as of version 2.0, this is [no longer integrated as an ESLint plugin](https://prettier.io/docs/en/integrating-with-linters.html#notes))
