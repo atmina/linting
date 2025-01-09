@@ -30,7 +30,7 @@
     "typescript": "5.7.3"
   },
   "dependencies": {
-    "@antfu/ni": "^0.23.1",
+    "@antfu/ni": "^23.0.0",
     "@eslint/compat": "^1.2.3",
     "@eslint/js": "^9.15.0",
     "@posva/prompts": "^2.4.4",
