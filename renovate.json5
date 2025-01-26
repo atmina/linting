@@ -6,6 +6,12 @@
   "ignoreTests": false,
   "extends": [
     "config:js-lib",
-    "group:all"
-  ]
+    "group:all",
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["tailwindcss"],
+      "allowedVersions": "< 4.0.0",
+    },
+  ],
 }
