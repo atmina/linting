@@ -30,8 +30,8 @@ importers:
         specifier: 9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: 22.13.7
-        version: 22.13.7
+        specifier: 22.13.8
+        version: 22.13.8
       '@types/react':
         specifier: 19.0.10
         version: 19.0.10
@@ -106,8 +106,8 @@ importers:
         specifier: 9.6.1
         version: 9.6.1
       '@types/node':
-        specifier: 22.13.7
-        version: 22.13.7
+        specifier: 22.13.8
+        version: 22.13.8
       '@types/prettier':
         specifier: 3.0.0
         version: 3.0.0
@@ -437,8 +437,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@22.13.7':
-    resolution: {integrity: sha512-oU2q+BsQldB9lYxHNp/5aZO+/Bs0Usa74Abo9mAKulz4ahQyXRHK6UVKYIN8KSC8HXwhWSi7b49JnX+txuac0w==}
+  '@types/node@22.13.8':
+    resolution: {integrity: sha512-G3EfaZS+iOGYWLLRCEAXdWK9my08oHNZ+FHluRiggIYJPOXzhOiDgpVCUHaUvyIC5/fj7C/p637jdzC666AOKQ==}
 
   '@types/prettier@3.0.0':
     resolution: {integrity: sha512-mFMBfMOz8QxhYVbuINtswBp9VL2b4Y0QqYHwqLz3YbgtfAcat2Dl6Y1o4e22S/OVE6Ebl9m7wWiMT2lSbAs1wA==}
@@ -2104,7 +2104,7 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@22.13.7':
+  '@types/node@22.13.8':
     dependencies:
       undici-types: 6.20.0
 
