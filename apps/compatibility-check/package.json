@@ -21,7 +21,7 @@
     "@atmina/linting": "workspace:*",
     "@next/eslint-plugin-next": "16.0.0",
     "@types/eslint": "9.6.1",
-    "@types/node": "22.18.12",
+    "@types/node": "24.9.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "9.38.0",
