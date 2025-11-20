@@ -19,7 +19,7 @@ jobs:
         eslint: [9]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       # https://vercel.com/guides/corepack-errors-github-actions
       - name: Use Latest Corepack
