@@ -22,7 +22,7 @@
     "@next/eslint-plugin-next": "16.1.5",
     "@types/eslint": "9.6.1",
     "@types/node": "24.10.9",
-    "@types/react": "19.2.9",
+    "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.2",
     "eslint-config-next": "16.1.5",
