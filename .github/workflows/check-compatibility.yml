@@ -19,7 +19,7 @@ jobs:
         eslint: [9]
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # https://vercel.com/guides/corepack-errors-github-actions
       - name: Use Latest Corepack
@@ -28,7 +28,7 @@ jobs:
           echo "corepack version => $(corepack --version)"
           corepack enable
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         name: Setup node
         with:
           cache: pnpm
